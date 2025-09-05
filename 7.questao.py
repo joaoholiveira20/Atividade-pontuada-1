@@ -5,13 +5,23 @@ os.system("cls")
 
 nome = input("Dgite o nome do produto: ")
 quantidade = int(input("Digite a quantidade adquirida: "))
-preco = int(input("preço unitário do produto: "))
+preco = float(input("preço unitário do produto: "))
 
 total = quantidade * preco
 
 if quantidade <= 5:
-    desconto = quantidade * 0.02
+    desconto = quantidade + preco * 0.02
+    total_desconto = desconto
 elif quantidade >5 and quantidade <= 10:
-    desconto = quantidade * 0.03
+    desconto = quantidade + preco * 0.03
+    total_desconto = desconto
 else:
-    desconto = quantidade * 0.05
+    desconto = quantidade + preco * 0.05
+    total_desconto = desconto
+
+total = quantidade * preco
+total_com_desconto = total 
+
+print(f"total da compra: {total}")
+print(f"o desconto: {desconto}")
+print(f"total a pagar: {total_desconto}")
